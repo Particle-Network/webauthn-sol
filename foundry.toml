@@ -1,9 +1,19 @@
 [profile.default]
-src = "src"
+auto_detect_solc = false
+src = "contracts"
+test = "test"
+script = "scripts"
 out = "out"
-libs = ["lib"]
+solc = "0.8.24"
+cache_path = "cache_forge"
+optimizer = true
 optimizer_runs = 999999
+fuzz = { runs = 1_000 }
+via-ir = true
+gas_reports = ["*"]
+libs = ["node_modules", "lib"]
 fs_permissions = [{ access = "read", path = "test/fixtures" }]
+
 
 [fmt]
 sort_imports = true
